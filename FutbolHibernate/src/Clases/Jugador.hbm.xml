@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-ene-2020 11:02:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Clases.Jugador" table="jugador" catalog="futbol" optimistic-lock="version">
+        <id name="idJugador" type="int">
+            <column name="id_jugador" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="equipo" class="Clases.Equipo" fetch="select">
+            <column name="id_equipo" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="65535" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+    </class>
+</hibernate-mapping>
